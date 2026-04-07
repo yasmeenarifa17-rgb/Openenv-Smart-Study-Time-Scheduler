@@ -1,0 +1,17 @@
+name: study-scheduler-env
+description: Smart study scheduling environment
+version: 1.0
+
+actions:
+  - study_a
+  - study_b
+  - study_c
+  - break
+
+observations:
+  - fatigue
+  - progress_a
+  - progress_b
+  - progress_c
+
+reward_range: [-1, 1]
