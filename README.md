@@ -1,2 +1,62 @@
-# Openenv-Smart-Study-Time-Scheduler
-A reinforcement learning environment that simulates a smart study time scheduler, optimizing learning progress while managing fatigue using reward-based decision making.
+**Smart-Study-Time-Scheduler**
+
+
+
+A student simulation where actions balance study choices and breaks, tracking fatigue and progress. Rewards encourage smart pacing: progress gains, rest when tired, penalties for overwork.
+
+
+
+✨ Features:
+
+📅 Smart scheduling of study hours
+
+⏱️ Break management
+
+🎯 Goal tracking
+
+🔄 Adaptive rescheduling
+
+📊 Productivity analytics
+
+
+
+🚀 Usage:
+
+-Run python main.py
+
+-Enter your available study hours
+
+-Generate a personalized timetable
+
+-Track progress and adjust as needed
+
+
+
+📂 Project Structure:
+
+Smart-Study-Time-Scheduler/ │── src/ # Core source code │── data/ # Sample inputs │── docs/ # Documentation │── tests/ # Unit tests │── requirements.txt # Dependencies │── README.md # Project overview
+
+
+
+🙌 Acknowledgments:
+
+Inspired by productivity tools and reinforcement learning concepts.
+
+
+
+📜 License:
+
+Licensed under the MIT License.
+
+
+
+🤝 Contributors:
+
+Turangi Harini
+
+Mohammad Arifa Yasmeen
+
+Kona Sri Gowthami
+
+
+
