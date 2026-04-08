@@ -1,0 +1,19 @@
+[project]
+name = "study-scheduler-env"
+version = "0.1.0"
+description = "Smart Study Time Scheduler RL Environment"
+authors = [{ name = "Arifa Yasmeen" }]
+
+dependencies = [
+  "flask",
+  "gymnasium",
+  "numpy",
+  "openenv>=0.2.0"
+]
+
+[project.scripts]
+server = "server.app:main"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
