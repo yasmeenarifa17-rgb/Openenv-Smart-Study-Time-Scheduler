@@ -1,3 +1,8 @@
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), "envs"))
+
+from study_env import StudyEnv
 from envs.study_env import StudyEnv
 import random
 
