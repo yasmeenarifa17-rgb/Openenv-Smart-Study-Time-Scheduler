@@ -1,24 +1,31 @@
 from envs.study_env import StudyEnv
 import random
 
-def run_task(task_name):
-    # Start block
-    print(f"[START] task={task_name}", flush=True)
+def run_task():
+    env = StudyEnv()
+    obs = env.reset()
 
-    # Example step
-    step = 1
-    reward = 0.5
-    print(f"[STEP] step={step} reward={reward}", flush=True)
+    done = False
+    total_reward = 0
 
-    # End block
-    score = 0.95
-    steps = step
-    print(f"[END] task={task_name} score={score} steps={steps}", flush=True)
+    while not done:
+        action = random.randint(0, 3)
+        obs, reward, done, _ = env.step(action)
+        total_reward += reward
+
+    return total_reward
 
 
 if __name__ == "__main__":
-    # Replace "StudyScheduler" with your actual task name
-    run_task("StudyScheduler")
+    print("START")
 
+    easy = run_task()
+    print("Easy:", easy)
 
-   
+    medium = run_task()
+    print("Medium:", medium)
+
+    hard = run_task()
+    print("Hard:", hard)
+
+    print("END")
