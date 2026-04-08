@@ -1,12 +1,19 @@
+import sys
+import os
+sys.path.append(os.path.dirname(__file__))
 from tasks import easy_task, medium_task, hard_task
-import time
+from flask import Flask
 
-print("Starting Study Scheduler Environment...\n")
+app = Flask(__name__)
 
-while True:
-    print("Easy:", easy_task())
-    print("Medium:", medium_task())
-    print("Hard:", hard_task())
-    print("-" * 40)
+@app.route("/")
+def home():
+    return f"""
+    <h2>Study Scheduler Environment</h2>
+    <p>Easy: {easy_task()}</p>
+    <p>Medium: {medium_task()}</p>
+    <p>Hard: {hard_task()}</p>
+    """
 
-    time.sleep(10)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=7860)
