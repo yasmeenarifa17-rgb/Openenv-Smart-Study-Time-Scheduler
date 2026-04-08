@@ -8,11 +8,17 @@ env = StudyEnv()
 def home():
     return "Study Scheduler Environment Running"
 
+# ✅ RESET
 @app.route("/reset", methods=["POST"])
 def reset():
     obs = env.reset()
+
+    if hasattr(obs, "__dict__"):
+        obs = obs.__dict__
+
     return jsonify({"observation": obs})
 
+# ✅ STEP
 @app.route("/step", methods=["POST"])
 def step():
     data = request.json
@@ -20,20 +26,24 @@ def step():
 
     obs, reward, done, _ = env.step(action)
 
+    if hasattr(obs, "__dict__"):
+        obs = obs.__dict__
+
     return jsonify({
         "observation": obs,
         "reward": float(reward),
         "done": bool(done)
     })
 
+# ✅ STATE
 @app.route("/state", methods=["GET"])
 def state():
-    return jsonify(env.state())
+    state = env.state()
 
-# ✅ ADD THIS (VERY IMPORTANT)
-def main():
-    app.run(host="0.0.0.0", port=7860)
+    if hasattr(state, "__dict__"):
+        state = state.__dict__
 
-# ✅ ADD THIS (REQUIRED)
+    return jsonify(state)
+
 if __name__ == "__main__":
-    main()
+    app.run(host="0.0.0.0", port=7860)
