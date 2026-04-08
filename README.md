@@ -1,4 +1,12 @@
-**Smart-Study-Time-Scheduler**
+---
+title: Study Scheduler Environment
+emoji: 📚
+colorFrom: blue
+colorTo: green
+sdk: docker
+app_file: app.py
+pinned: false
+---**Smart-Study-Time-Scheduler**
 
 
 
